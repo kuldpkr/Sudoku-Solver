@@ -46,7 +46,54 @@ function solveHelper(matrix, i, j){
     }
     return false;
 }
+function validateSudoku(matrix){
+    let cnt = [];
+    
+    for(let i=0;i<9;i++){
+        cnt = [];
+        for(let i=0;i<=9;i++)cnt[i] = 0;
 
+        for(let j=0;j<9;j++){
+            cnt[matrix[i][j]] += 1;
+        }
+        for(let num = 1;num<=9;num++){
+            if(cnt[num]>=2)return false;
+        }
+    }
+
+    // Check columns
+    for(let j=0;j<9;j++){
+        cnt = [];
+        for(let i=0;i<=9;i++)cnt[i] = 0;
+
+        for(let i=0;i<9;i++){
+            cnt[matrix[i][j]] += 1;
+        }
+        for(let num = 1;num<=9;num++){
+            if(cnt[num]>=2)return false;
+        }
+    }
+    // check boxes
+    let rowVal=[0,3,6];
+    let colVal=[0,3,6];
+    for(let i=0;i<3;i++){
+        for(let j=0;j<3;j++){
+            cnt = [];
+            for(let i=0;i<=9;i++)cnt[i] = 0;
+
+            for(let x=rowVal[i];x<rowVal[i]+3;x++){
+                for(let y=colVal[j]; y<colVal[j]+3;y++){
+                    cnt[matrix[x][y]] += 1;
+                }
+            }
+            
+            for(let num = 1;num<=9;num++){
+                if(cnt[num]>=2)return false;
+            }
+        }
+    }
+    return true;
+}
 function solveSudoku(){
     let matrix = new Array(9);
     for(let i=0;i<9;i++){
@@ -56,10 +103,21 @@ function solveSudoku(){
     for(let i =0;i<9;i++){
         for(let j=0;j<9;j++){
             let num = document.getElementById('t'+i+j).value;
-            matrix[i][j] = (num === "") ? 0 : parseInt(num);
+            if(num == "" || (num >= "1" && num <= "9")){
+                matrix[i][j] = (num === "") ? 0 : parseInt(num);
+            }
+            else{
+                alert("Please enter numbers between 1 and 9 (both inclusive).");
+                return;
+            }
         }
     }
     // console.log(matrix);
+    let validSudoku = validateSudoku(matrix);
+    if(!validSudoku){
+        alert("Please enter a valid Sudoku.")
+        return;
+    }
     let result = solveHelper(matrix,0,0);
     // console.log("solve helper returned", result);
     if(result){
