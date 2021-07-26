@@ -1,0 +1,73 @@
+body {
+	text-align: center;
+    background-image: url(./sudoku.jpeg);
+    background-size: auto;
+}
+
+h1 {
+	color: #570abb;
+	font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.content {
+	border-spacing: 0;
+	border: 4px solid #4d0b74;
+	border-collapse: collapse;
+	color: #9e230d;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	margin-top: 1rem;
+}
+
+table tr:nth-child(3), table tr:nth-child(6) {
+	border-bottom: 3px solid #341a96;
+}
+
+table tr td:nth-child(3), table tr td:nth-child(6) {
+	border-right: 3px solid #080769;
+}
+
+table tr td {
+	border-bottom: 2px solid rgb(54, 14, 146);
+	border-right: 2px solid rgb(109, 16, 138);
+	background-color: #fff;
+}
+
+.content td input {
+	width: 2.5rem;
+	height: 2.5rem;
+	text-align: center;
+	font-size: 2rem;
+	border: none;
+	outline-color: #0abb9c;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.content input:hover {
+	background-color: #f2e5ee;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.solveBtn {
+	margin-top: 1rem;
+}
+
+.solveBtn button {
+	font-size: 2rem;
+	border-radius: 0;
+	border: 2px solid #05352c;
+	cursor: pointer;
+	outline: none;
+	color: #0a5dbb;
+}
+
+.solveBtn button:hover {
+	background-color: #16d686;
+	color: #fff;
+}

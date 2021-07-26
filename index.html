@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1>Sudoku Solver</h1>
+    </div>
+    <div>
+      <table class="content" align="center">
+        <tr>
+          <td><input class="active" type="text" id="t00" maxlength="1"></td>
+          <td><input type="text" id="t01" maxlength="1"></td>
+          <td><input type="text" id="t02" maxlength="1"></td>
+          <td><input type="text" id="t03" maxlength="1"></td>
+          <td><input type="text" id="t04" maxlength="1"></td>
+          <td><input type="text" id="t05" maxlength="1"></td>
+          <td><input type="text" id="t06" maxlength="1"></td>
+          <td><input type="text" id="t07" maxlength="1"></td>
+          <td><input type="text" id="t08" maxlength="1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="t10" maxlength="1"></td>
+          <td><input type="text" id="t11" maxlength="1"></td>
+          <td><input type="text" id="t12" maxlength="1"></td>
+          <td><input type="text" id="t13" maxlength="1"></td>
+          <td><input type="text" id="t14" maxlength="1"></td>
+          <td><input type="text" id="t15" maxlength="1"></td>
+          <td><input type="text" id="t16" maxlength="1"></td>
+          <td><input type="text" id="t17" maxlength="1"></td>
+          <td><input type="text" id="t18" maxlength="1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="t20" maxlength="1"></td>
+          <td><input type="text" id="t21" maxlength="1"></td>
+          <td><input type="text" id="t22" maxlength="1"></td>
+          <td><input type="text" id="t23" maxlength="1"></td>
+          <td><input type="text" id="t24" maxlength="1"></td>
+          <td><input type="text" id="t25" maxlength="1"></td>
+          <td><input type="text" id="t26" maxlength="1"></td>
+          <td><input type="text" id="t27" maxlength="1"></td>
+          <td><input type="text" id="t28" maxlength="1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="t30" maxlength="1"></td>
+          <td><input type="text" id="t31" maxlength="1"></td>
+          <td><input type="text" id="t32" maxlength="1"></td>
+          <td><input type="text" id="t33" maxlength="1"></td>
+          <td><input type="text" id="t34" maxlength="1"></td>
+          <td><input type="text" id="t35" maxlength="1"></td>
+          <td><input type="text" id="t36" maxlength="1"></td>
+          <td><input type="text" id="t37" maxlength="1"></td>
+          <td><input type="text" id="t38" maxlength="1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="t40" maxlength="1"></td>
+          <td><input type="text" id="t41" maxlength="1"></td>
+          <td><input type="text" id="t42" maxlength="1"></td>
+          <td><input type="text" id="t43" maxlength="1"></td>
+          <td><input type="text" id="t44" maxlength="1"></td>
+          <td><input type="text" id="t45" maxlength="1"></td>
+          <td><input type="text" id="t46" maxlength="1"></td>
+          <td><input type="text" id="t47" maxlength="1"></td>
+          <td><input type="text" id="t48" maxlength="1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="t50" maxlength="1"></td>
+          <td><input type="text" id="t51" maxlength="1"></td>
+          <td><input type="text" id="t52" maxlength="1"></td>
+          <td><input type="text" id="t53" maxlength="1"></td>
+          <td><input type="text" id="t54" maxlength="1"></td>
+          <td><input type="text" id="t55" maxlength="1"></td>
+          <td><input type="text" id="t56" maxlength="1"></td>
+          <td><input type="text" id="t57" maxlength="1"></td>
+          <td><input type="text" id="t58" maxlength="1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="t60" maxlength="1"></td>
+          <td><input type="text" id="t61" maxlength="1"></td>
+          <td><input type="text" id="t62" maxlength="1"></td>
+          <td><input type="text" id="t63" maxlength="1"></td>
+          <td><input type="text" id="t64" maxlength="1"></td>
+          <td><input type="text" id="t65" maxlength="1"></td>
+          <td><input type="text" id="t66" maxlength="1"></td>
+          <td><input type="text" id="t67" maxlength="1"></td>
+          <td><input type="text" id="t68" maxlength="1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="t70" maxlength="1"></td>
+          <td><input type="text" id="t71" maxlength="1"></td>
+          <td><input type="text" id="t72" maxlength="1"></td>
+          <td><input type="text" id="t73" maxlength="1"></td>
+          <td><input type="text" id="t74" maxlength="1"></td>
+          <td><input type="text" id="t75" maxlength="1"></td>
+          <td><input type="text" id="t76" maxlength="1"></td>
+          <td><input type="text" id="t77" maxlength="1"></td>
+          <td><input type="text" id="t78" maxlength="1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="t80" maxlength="1"></td>
+          <td><input type="text" id="t81" maxlength="1"></td>
+          <td><input type="text" id="t82" maxlength="1"></td>
+          <td><input type="text" id="t83" maxlength="1"></td>
+          <td><input type="text" id="t84" maxlength="1"></td>
+          <td><input type="text" id="t85" maxlength="1"></td>
+          <td><input type="text" id="t86" maxlength="1"></td>
+          <td><input type="text" id="t87" maxlength="1"></td>
+          <td><input type="text" id="t88" maxlength="1"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="solveBtn">
+      <button id="solveIt">Solve</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
