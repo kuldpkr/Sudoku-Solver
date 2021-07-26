@@ -7,14 +7,14 @@
     <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
+  <div>
+    <h1>Sudoku Solver</h1>
+  </div>
   <div class="container">
-    <div>
-      <h1>Sudoku Solver</h1>
-    </div>
     <div>
       <table class="content" align="center">
         <tr>
-          <td><input class="active" type="text" id="t00" maxlength="1"></td>
+          <td><input type="text" id="t00" maxlength="1"></td>
           <td><input type="text" id="t01" maxlength="1"></td>
           <td><input type="text" id="t02" maxlength="1"></td>
           <td><input type="text" id="t03" maxlength="1"></td>
@@ -116,6 +116,7 @@
     </div>
     <div class="solveBtn">
       <button id="solveIt">Solve</button>
+      <button id="resetIt">Reset</button>
     </div>
   </div>
   <script src="main.js"></script>

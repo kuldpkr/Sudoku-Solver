@@ -5,10 +5,15 @@ body {
 }
 
 h1 {
-	color: #570abb;
-	font-size: 4rem;
+	color: #9d62e9;
+	font-size: 10vh;
     margin-bottom: 0;
 }
+/* .container {  
+    display: grid;  
+    grid-template-columns: 1fr 1fr 1fr;  
+    grid-template-rows: 50px 50px;  
+} */
 
 .content {
 	border-spacing: 0;
@@ -35,10 +40,10 @@ table tr td {
 }
 
 .content td input {
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 5vh;
+	height: 5vh;
 	text-align: center;
-	font-size: 2rem;
+	font-size: 4vh;
 	border: none;
 	outline-color: #0abb9c;
 	color: rgba(0, 0, 0, 0.6);
@@ -59,7 +64,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .solveBtn button {
-	font-size: 2rem;
+	font-size: 4vh;
 	border-radius: 0;
 	border: 2px solid #05352c;
 	cursor: pointer;

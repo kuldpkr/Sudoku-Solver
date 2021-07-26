@@ -74,3 +74,13 @@ function solveSudoku(){
 
 const solveBtn = document.getElementById("solveIt");
 solveBtn.onclick = solveSudoku;
+
+function resetSudoku(){
+    for(let i =0;i<9;i++){
+        for(let j=0;j<9;j++){
+            document.getElementById('t'+i+j).value = "";
+        }
+    }
+}
+const resetBtn = document.getElementById("resetIt");
+resetBtn.onclick = resetSudoku;
