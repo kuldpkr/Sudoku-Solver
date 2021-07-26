@@ -76,3 +76,16 @@ input[type=number]::-webkit-outer-spin-button {
 	background-color: #16d686;
 	color: #fff;
 }
+@media screen and (max-width: 600px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+	.solveBtn button {
+		font-size: 1rem;
+	}
+	.content td input {
+		width: 1.5rem;
+		height: 1.5rem;
+		font-size: 1rem;
+	}
+}
