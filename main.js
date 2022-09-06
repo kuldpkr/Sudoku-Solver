@@ -99,7 +99,8 @@ function solveSudoku(){
     for(let i=0;i<9;i++){
         matrix[i] = [];
     }
-
+    let unfilledX = [];//To store coordinates of already unfilled cells
+    let unfilledY = [];//To store coordinates of already unfilled cells
     for(let i =0;i<9;i++){
         for(let j=0;j<9;j++){
             let num = document.getElementById('t'+i+j).value;
@@ -110,11 +111,13 @@ function solveSudoku(){
                 alert("Please enter numbers between 1 and 9 (both inclusive).");
                 return;
             }
+            if(num === ""){
+                unfilledX.push(i);
+                unfilledY.push(j);
+            }
         }
     }
-    // console.log(matrix);
-    let validSudoku = validateSudoku(matrix);
-    if(!validSudoku){
+    if(!validateSudoku(matrix)){
         alert("Please enter a valid Sudoku.")
         return;
     }
@@ -127,6 +130,9 @@ function solveSudoku(){
                 document.getElementById('t'+i+j).value = num;
             }
         }
+        for(let k=0;k<unfilledX.length;k++){
+            document.getElementById('t'+unfilledX[k]+unfilledY[k]).style.backgroundColor="aqua";
+        }
     }
 }
 
@@ -137,8 +143,43 @@ function resetSudoku(){
     for(let i =0;i<9;i++){
         for(let j=0;j<9;j++){
             document.getElementById('t'+i+j).value = "";
+            document.getElementById('t'+i+j).style.backgroundColor="white";
         }
     }
 }
 const resetBtn = document.getElementById("resetIt");
 resetBtn.onclick = resetSudoku;
+
+//solving the board when user presses the enter key
+document.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    console.log(document.activeElement.id);
+    // console.log('Enter key pressed')
+    solveSudoku();
+  }
+});
+
+document.addEventListener('keydown', (e) => {  
+    // e = e || window.event;  
+    const curEl = document.activeElement;
+    if(curEl.nodeName === "INPUT"){
+        if (e.key === "ArrowUp") {  
+            const nextFieldID = 't' + (curEl.id[1]==='0' ? '0' : String.fromCharCode(curEl.id[1].charCodeAt() - 1 )) + + curEl.id[2]; 
+            document.getElementById(nextFieldID).focus(); 
+            // console.log('up arrow pressed');  
+        } else if (e.key === "ArrowDown") {  
+            const nextFieldID = 't' + (curEl.id[1]==='8' ? '8' : String.fromCharCode(curEl.id[1].charCodeAt() + 1 )) + + curEl.id[2]; 
+            document.getElementById(nextFieldID).focus(); 
+            // console.log('down arrow pressed');  
+        } else if (e.key === "ArrowLeft") { 
+            const nextFieldID = 't' + curEl.id[1] + (curEl.id[2]==='0' ? '0' : String.fromCharCode(curEl.id[2].charCodeAt() - 1 )); 
+            document.getElementById(nextFieldID).focus();  
+            // console.log('left arrow pressed'); 
+        } else if (e.key === "ArrowRight") {  
+            // console.log('right arrow pressed'); 
+            const nextFieldID = 't' + curEl.id[1] + (curEl.id[2]==='8' ? '8' : String.fromCharCode(curEl.id[2].charCodeAt() + 1 )); 
+            document.getElementById(nextFieldID).focus(); 
+        }  
+    }
+})
+  
